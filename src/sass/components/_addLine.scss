@@ -1,0 +1,9 @@
+.addLine {
+    text-align: center;
+
+    &__button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}

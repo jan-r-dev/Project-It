@@ -1,0 +1,25 @@
+
+.concept {
+    width: 35%;
+    padding: 2rem 0;
+
+
+    border-radius: 3px;
+
+    margin: 0 7.5% 0 auto;
+
+    box-shadow: 0 .1rem .2rem rgba(#060707, .4);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__paragraph {
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: .1rem solid rgba($purple-primary, .6);
+    }
+}

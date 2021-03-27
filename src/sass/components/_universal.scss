@@ -1,0 +1,28 @@
+.marker {
+    color: $marker_font_color;
+    background-color: $component_headline_background_color;
+    padding: .4rem 1rem;
+    font-size: 1.7rem;
+
+    border-radius: 3px;
+    box-shadow: 0 .1rem .2rem rgba(#060707, .4);
+}
+
+.content {
+    color: $content_font_color;
+    padding: .5rem 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+
+
+    background-color: $component_content_background_color;
+    box-shadow: 0 .1rem .2rem rgba(#060707, .4);
+}
+
+.dividing-line {
+    width: 80%;
+    border-radius: 50%;
+    margin: 2rem 0;
+    height: .2rem;
+    background-color: rgba($purple-primary, .6);
+}

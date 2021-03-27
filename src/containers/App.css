@@ -1,0 +1,384 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 300;
+  background: #989898;
+  background: linear-gradient(90deg, #989898 0%, gainsboro 1%, gainsboro 99%, #989898 100%);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  width: 114rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.column-1st-2 {
+  width: 10%;
+  margin-right: 5%;
+  margin-left: 7.5%;
+  height: auto;
+}
+
+.column-2nd-2 {
+  width: 70%;
+  margin-right: 7.5%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.plus-icon {
+  display: inline-block;
+  width: 1.5rem;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  transition: all 200ms ease-in;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup__content {
+  width: 70%;
+  height: 40rem;
+  background-color: white;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: 1fr 4fr 1fr;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas: "label label" "input input" "cancel confirm";
+}
+.popup__label {
+  grid-area: label;
+  align-self: center;
+}
+.popup__input {
+  grid-area: input;
+}
+.popup__btn {
+  font-size: inherit;
+  padding: 0.4rem 1rem;
+}
+.popup__btn--cancel {
+  grid-area: cancel;
+  align-self: center;
+  justify-self: right;
+  width: 16rem;
+  margin-right: 2rem;
+}
+.popup__btn--confirm {
+  grid-area: confirm;
+  align-self: center;
+  justify-self: left;
+  width: 16rem;
+  margin-left: 2rem;
+}
+
+.popup--visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.marker {
+  color: #232323;
+  background-color: rgba(244, 245, 245, 0.6);
+  padding: 0.4rem 1rem;
+  font-size: 1.7rem;
+  border-radius: 3px;
+  box-shadow: 0 0.1rem 0.2rem rgba(6, 7, 7, 0.4);
+}
+
+.content {
+  color: #232323;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 3px;
+  background-color: #fdfdfd;
+  box-shadow: 0 0.1rem 0.2rem rgba(6, 7, 7, 0.4);
+}
+
+.dividing-line {
+  width: 80%;
+  border-radius: 50%;
+  margin: 2rem 0;
+  height: 0.2rem;
+  background-color: rgba(211, 103, 193, 0.6);
+}
+
+.concept {
+  width: 35%;
+  padding: 2rem 0;
+  border-radius: 3px;
+  margin: 0 7.5% 0 auto;
+  box-shadow: 0 0.1rem 0.2rem rgba(6, 7, 7, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.concept__paragraph {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(211, 103, 193, 0.6);
+}
+
+.addLine {
+  text-align: center;
+}
+.addLine__button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.checkbox {
+  font-size: 2rem;
+  color: #d367c1;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  align-self: center;
+}
+.checkbox__input {
+  display: grid;
+  grid-template-areas: "checkbox";
+}
+.checkbox__input * {
+  grid-area: checkbox;
+}
+.checkbox__input input {
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+}
+.checkbox__input input:checked + .checkbox__control svg {
+  transform: scale(1);
+}
+.checkbox__input input:focus + .checkbox__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+}
+.checkbox__control {
+  display: inline-grid;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.25em;
+  border: 0.1em solid currentColor;
+}
+.checkbox__control svg {
+  transition: transform 0.1s ease-in 25ms;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+.content__needed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: all 200ms;
+}
+.content__needed-checked {
+  background-color: rgba(211, 103, 193, 0.1) !important;
+  box-shadow: 0 0.1rem 0.2rem rgba(211, 103, 193, 0.4) !important;
+}
+
+.marker-updates {
+  height: 4rem;
+}
+
+.content-updates {
+  margin-top: 0;
+  align-items: center;
+  justify-content: center;
+}
+.content-updates__button {
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0.1rem 0.2rem rgba(6, 7, 7, 0.4);
+  border: none;
+  width: 60%;
+  color: #232323;
+  font: inherit;
+  font-size: 1.8rem;
+  transition: all 200ms;
+}
+.content-updates__button:hover {
+  color: #fff;
+  background-color: #d367c1;
+}
+.content-updates__button:active {
+  background-color: red;
+}
+
+.progress {
+  width: 100%;
+  padding: 0 10%;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.progress--complete::after {
+  content: "Completed & Implemented";
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.progress__square {
+  height: 2.4rem;
+  width: 25%;
+  font-size: 1.4rem;
+  transition: all 200ms;
+  border: 1px solid;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-color: #d367c1;
+  background-color: #d367c1;
+}
+.progress__square--1 {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.progress__square--4 {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.transparentBack {
+  background: linear-gradient(90deg, rgba(191, 0, 0, 0) 0%, rgba(255, 81, 0, 0) 100%) !important;
+}
+
+/*
+.progress {
+    width: 100%;
+    padding: 0 10%;
+    margin: 1rem 0;
+    display: flex;
+
+    align-items: center;
+
+    &__square {
+        height: 2.25rem;
+        width: 25%;
+        font-size: 1.4rem;
+
+        transition: all 200ms;
+
+        border: 1px solid;
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &--1 {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            background: linear-gradient(90deg, rgba(191, 0, 0, .9) 0%, rgba(255, 81, 0, .9) 100%);
+            border-color: red;
+        }
+
+        &--2 {
+            background: linear-gradient(90deg, rgba(255, 81, 0, .9) 0%, rgba(255, 154, 0, .9) 100%);
+            border-color: orange;
+        }
+
+        &--3 {
+            background: linear-gradient(90deg, rgba(255, 154, 0, .9) 0%, rgba(249, 255, 0, .9) 100%);
+            border-color: yellow;
+        }
+
+        &--4 {
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+
+            background: linear-gradient(90deg, rgba(249, 255, 0, .9) 0%, rgba(35, 255, 0, .9) 100%);
+            border-color: green;
+        }
+    }
+}
+
+.transparentBack {
+    background: linear-gradient(90deg, rgba(191, 0, 0, .0) 0%, rgba(255, 81, 0, .0) 100%) !important;
+}
+
+.transparentBorder {
+    border: none !important;
+}
+
+*/
+.finalise__row {
+  margin-bottom: 18rem;
+}
+.finalise__marker {
+  height: 4rem;
+}
+.finalise__content textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  /*remove the resize handle on the bottom right*/
+}
+.finalise__textarea {
+  width: 95%;
+  height: 40vh;
+  margin: auto;
+  font-family: inherit;
+  color: #232323;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  background-color: #fdfdfd;
+  box-shadow: 0 0.1rem 0.2rem rgba(6, 7, 7, 0.4);
+}
+
+@media print {
+  body {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 30mm 45mm 30mm 45mm;
+    /* change the margins as you want them to be. */
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

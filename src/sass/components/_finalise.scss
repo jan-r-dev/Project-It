@@ -1,0 +1,33 @@
+.finalise {
+    &__row {
+        margin-bottom: 18rem;
+    }
+
+    &__marker {
+        height: 4rem;
+    }
+
+    &__content {
+
+        textarea {
+            border: none;
+            outline: none;
+
+            resize: none; /*remove the resize handle on the bottom right*/
+        }
+    }
+
+    &__textarea {
+        width: 95%;
+        height: 40vh;
+        margin: auto;
+        font-family: inherit;
+        color: $content_font_color;
+        padding: 1.2rem;
+        font-size: 1.6rem;
+
+        background-color: $component_content_background_color;
+
+        box-shadow: 0 .1rem .2rem rgba(#060707, .4);
+    }
+}

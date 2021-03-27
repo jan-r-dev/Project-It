@@ -1,0 +1,80 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.6rem;
+    
+
+    transition: all 200ms ease-in;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &__content {
+        width: 70%;
+        height: 40rem;
+        background-color: white;
+        padding: 2rem 1rem;
+
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: 1fr 4fr 1fr;
+        justify-content: center;
+        align-content: center;
+
+        grid-template-areas:
+            "label label"
+            "input input"
+            "cancel confirm";
+    }
+
+    &__label {
+        grid-area: label;
+
+        align-self: center;
+    }
+
+    &__input {
+        grid-area: input;
+    }
+
+    &__btn {
+
+        font-size: inherit;
+        padding: .4rem 1rem;
+
+        &--cancel {
+            grid-area: cancel;
+
+            align-self: center;
+            justify-self: right;
+            width: 16rem;
+            margin-right: 2rem;
+        }
+
+        &--confirm {
+            grid-area: confirm;
+
+            align-self: center;
+            justify-self: left;
+            width: 16rem;
+            margin-left: 2rem;
+        }
+    }
+}
+
+.popup--visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}

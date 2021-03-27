@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    box-sizing: border-box;
+
+    font-weight: 300;
+    // padding: 0 5rem;
+    background: rgb(152,152,152);
+    background: linear-gradient(90deg, rgba(152,152,152,1) 0%, rgba(220,220,220,1) 1%, rgba(220,220,220,1) 99%, rgba(152,152,152,1) 100%); 
+
+}
